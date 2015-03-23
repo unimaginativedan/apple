@@ -1,0 +1,234 @@
+================================================================================
+HPLinpack 2.1  --  High-Performance Linpack benchmark  --   October 26, 2012
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :   39000    40000    41000 
+NB     :      64      256 
+PMAP   : Row-major process mapping
+P      :       2 
+Q      :       4 
+PFACT  :    Left 
+NBMIN  :       2 
+NDIV   :       2 
+RFACT  :    Left 
+BCAST  :   1ring 
+DEPTH  :       0 
+SWAP   : Mix (threshold = 64)
+L1     : transposed form
+U      : transposed form
+EQUIL  : yes
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       39000    64     2     4             739.77              5.346e+01
+HPL_pdgesv() start time Sat Mar 21 12:37:41 2015
+
+HPL_pdgesv() end time   Sat Mar 21 12:50:01 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0036886 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       39000   256     2     4             692.47              5.711e+01
+HPL_pdgesv() start time Sat Mar 21 12:50:31 2015
+
+HPL_pdgesv() end time   Sat Mar 21 13:02:03 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0034455 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       40000    64     2     4             793.52              5.377e+01
+HPL_pdgesv() start time Sat Mar 21 13:02:34 2015
+
+HPL_pdgesv() end time   Sat Mar 21 13:15:48 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0036408 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       40000   256     2     4             745.65              5.722e+01
+HPL_pdgesv() start time Sat Mar 21 13:16:19 2015
+
+HPL_pdgesv() end time   Sat Mar 21 13:28:45 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0034249 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       41000    64     2     4            1209.59              3.799e+01
+HPL_pdgesv() start time Sat Mar 21 13:29:17 2015
+
+HPL_pdgesv() end time   Sat Mar 21 13:49:27 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0032246 ...... PASSED
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR00L2L2       41000   256     2     4             920.64              4.991e+01
+HPL_pdgesv() start time Sat Mar 21 13:50:01 2015
+
+HPL_pdgesv() end time   Sat Mar 21 14:05:22 2015
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0030663 ...... PASSED
+================================================================================
+
+Finished      6 tests with the following results:
+              6 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
+
+
+###############################################################################
+TCHPC Cluster: lonsdale
+Job 198119 (my_hpl_job_1_node) for User 'purdyd' in Account 'mschpc'
+Finished at: Sat Mar 21 14:05:40 GMT 2015
+
+Job completion status:
+======================
+
+       JobID    JobName      Account  Partition   NTasks  AllocCPUS  MaxVMSize    Elapsed      State ExitCode 
+------------ ---------- ------------ ---------- -------- ---------- ---------- ---------- ---------- -------- 
+198119       my_hpl_jo+       mschpc    compute                   8              01:28:15  COMPLETED      0:0 
+198119.batch      batch       mschpc                   1          1  15812544K   01:28:15  COMPLETED      0:0 
+
+
+Job details:
+============
+
+JobId=198119 JobName=my_hpl_job_1_node
+   UserId=purdyd(5481) GroupId=purdyd(9286)
+   Priority=10226252 Nice=0 Account=mschpc QOS=normal
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   DerivedExitCode=0:0
+   RunTime=01:28:15 TimeLimit=03:00:00 TimeMin=N/A
+   SubmitTime=2015-03-21T12:37:25 EligibleTime=2015-03-21T12:37:25
+   StartTime=2015-03-21T12:37:25 EndTime=2015-03-21T14:05:40
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   Partition=compute AllocNode:Sid=lonsdale01:32142
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   BatchHost=lonsdale-n146
+   NumNodes=1 NumCPUs=8 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+     Nodes=lonsdale-n146 CPU_IDs=0-7 Mem=15000
+   MinCPUsNode=1 MinMemoryNode=15000M MinTmpDiskNode=0
+   Features=(null) Gres=(null) Reservation=application
+   Shared=0 Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home/users/mschpc/2014/purdyd/HPL/hpl-2.1/bin/lonsdale-gcc4.8.2-openmp1.7.3-mkl11/sbatch.sh
+   WorkDir=/home/users/mschpc/2014/purdyd/HPL/hpl-2.1/bin/lonsdale-gcc4.8.2-openmp1.7.3-mkl11
+   StdErr=/home/users/mschpc/2014/purdyd/HPL/hpl-2.1/bin/lonsdale-gcc4.8.2-openmp1.7.3-mkl11/slurm-198119.out
+   StdIn=/dev/null
+   StdOut=/home/users/mschpc/2014/purdyd/HPL/hpl-2.1/bin/lonsdale-gcc4.8.2-openmp1.7.3-mkl11/slurm-198119.out
+
+
+Disk quota details:
+===================
+
+Quota Type           Name  Filesystem     Usage in MB     Limit in MB    % Used
+-------------------------------------------------------------------------------
+USER               purdyd       /home               7          51,200     0.01%
+
+GROUP              mschpc   /projects             999          51,200     1.95%
+
+
+SLURM Bank Statement:
+=====================
+
+User           Usage |        Account     Usage | Account Limit Available (CPU hrs)
+---------- --------- + -------------- --------- + ------------- ---------
+
+aljohani          22 |         MSCHPC   104,796 |       400,000   295,204
+boycek         4,743 |         MSCHPC   104,796 |       400,000   295,204
+dalyso           200 |         MSCHPC   104,796 |       400,000   295,204
+deleligt         709 |         MSCHPC   104,796 |       400,000   295,204
+dowlindo         563 |         MSCHPC   104,796 |       400,000   295,204
+dunneff        4,157 |         MSCHPC   104,796 |       400,000   295,204
+elynch         2,903 |         MSCHPC   104,796 |       400,000   295,204
+hannigs            4 |         MSCHPC   104,796 |       400,000   295,204
+hernonma         689 |         MSCHPC   104,796 |       400,000   295,204
+holtonmi           0 |         MSCHPC   104,796 |       400,000   295,204
+howardrj           0 |         MSCHPC   104,796 |       400,000   295,204
+hynesr         1,365 |         MSCHPC   104,796 |       400,000   295,204
+jabehan        3,456 |         MSCHPC   104,796 |       400,000   295,204
+jbulava          158 |         MSCHPC   104,796 |       400,000   295,204
+jose               2 |         MSCHPC   104,796 |       400,000   295,204
+kcleary           67 |         MSCHPC   104,796 |       400,000   295,204
+khuongt            0 |         MSCHPC   104,796 |       400,000   295,204
+lambem           514 |         MSCHPC   104,796 |       400,000   295,204
+liul1            495 |         MSCHPC   104,796 |       400,000   295,204
+luoq           2,782 |         MSCHPC   104,796 |       400,000   295,204
+makirby        1,126 |         MSCHPC   104,796 |       400,000   295,204
+mcbridne       2,142 |         MSCHPC   104,796 |       400,000   295,204
+mehtav            82 |         MSCHPC   104,796 |       400,000   295,204
+melbyrne       2,553 |         MSCHPC   104,796 |       400,000   295,204
+murphd37      15,590 |         MSCHPC   104,796 |       400,000   295,204
+murrayb8       2,421 |         MSCHPC   104,796 |       400,000   295,204
+nobyrnes       1,513 |         MSCHPC   104,796 |       400,000   295,204
+oconnm28         619 |         MSCHPC   104,796 |       400,000   295,204
+ormondca       1,661 |         MSCHPC   104,796 |       400,000   295,204
+osheac9          968 |         MSCHPC   104,796 |       400,000   295,204
+osullm40       1,353 |         MSCHPC   104,796 |       400,000   295,204
+paddy          1,817 |         MSCHPC   104,796 |       400,000   295,204
+peitzscs           0 |         MSCHPC   104,796 |       400,000   295,204
+phalpin           73 |         MSCHPC   104,796 |       400,000   295,204
+purdyd           133 |         MSCHPC   104,796 |       400,000   295,204
+rooneydt         297 |         MSCHPC   104,796 |       400,000   295,204
+sbruton            0 |         MSCHPC   104,796 |       400,000   295,204
+sharding           0 |         MSCHPC   104,796 |       400,000   295,204
+sikelleh         202 |         MSCHPC   104,796 |       400,000   295,204
+simpsoao          36 |         MSCHPC   104,796 |       400,000   295,204
+sknott             0 |         MSCHPC   104,796 |       400,000   295,204
+smurray4         514 |         MSCHPC   104,796 |       400,000   295,204
+spellacl       1,689 |         MSCHPC   104,796 |       400,000   295,204
+vetsaa            80 |         MSCHPC   104,796 |       400,000   295,204
+wechen         7,593 |         MSCHPC   104,796 |       400,000   295,204
+wyattg           200 |         MSCHPC   104,796 |       400,000   295,204
+zhuang           348 |         MSCHPC   104,796 |       400,000   295,204
+
+
+Acknowledgements:
+=================
+
+Note that usage of TCHPC Resources *must* be acknowledged in all publications.
+
+Please see this page for details relevant to this cluster:
+
+http://www.tchpc.tcd.ie/resources/acknowledgementpolicy
+
+################################################################################
