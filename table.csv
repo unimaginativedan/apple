@@ -1,0 +1,5 @@
+ArchName,Compiler,Compiler Version,BLAS,BLAS version,OpenMPI version,T/V,N,NB,P,Q,Time,Gflops
+lonsdale-gcc4.8.2-openmp1.6.5-acml4.3,gcc,4.8.2,acml,4.3.0,1.6.5,WR00L2L2,40000,256,2,4,736.58,5.793e+01
+lonsdale-gcc4.8.2-openmp1.7.3-mkl11,gcc,4.8.2,mkl,64/11.0.074,1.7.3,WR00L2L2,40000,256,2,4,745.65,5.722e+01
+lonsdale-icc11-acml4.3-intel.openmp.1.6.1,icc,11.0.074,acml,4.3.0,1.6.1,WR00L2L2,40000,256,2,4,731.44,5.834e+01
+lonsdale-icc11-mkl11-intel.openmp.1.6.1,icc,11.0.074,mkl,64/11.0.074,1.6.1,WR00L2L2,40000,256,2,4,756.23,5.642e+01
